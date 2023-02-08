@@ -94,7 +94,6 @@ const app = createApp({
             setTimeout(()=>{
                 this.loading = "";
                 this.$refs.productModal.openModal()
-
             },1000)
         },
         addToCard(product_id,qty = 1){
@@ -103,7 +102,6 @@ const app = createApp({
                 qty
             }
             this.loading = product_id
-            
             axios.post(`${url}/v2/api/${api_path}/cart`,{ data })
             .then((res)=>{
                 console.log(res)
@@ -162,6 +160,11 @@ const app = createApp({
     mounted(){
         this.getData()
         this.getCartList()
+        this.isLoading = true
+        setTimeout(()=>{
+          this.isLoading=false
+      },1000)
+        
     }
 
 })

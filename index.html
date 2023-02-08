@@ -51,7 +51,7 @@
                     :disabled="loading === product.id">
                       
                       <i class="fas fa-spinner fa-pulse" v-if="loading === product.id"></i>
-                      <!-- <loading v-model:active="isLoading"/> -->
+                      <!-- <loading v-model:active="isLoading" :can-cancel="true"/>  -->
                       查看更多<loading v-model:active="isLoading"/>
                     </button>
                     <button type="button" class="btn btn-outline-danger" @click="addToCard(product.id)"
